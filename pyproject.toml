@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "datafunc"
+version = "0.0.1"
+description = "Python functions for various dict, list, and other data structures."
+license = "MIT"
+readme = "README.md"
+authors = ["Tom A. <14287229+TensorTom@users.noreply.github.com>"]
+homepage = "https://github.com/tensortom/datafunc"
+repository = "https://github.com/tensortom/datafunc"
+keywords = ["python", "python3", "data", "dict", "utilities", "util", "tools", "dict", "dictionary",
+    "data", "mo-dots", "list", "dotty_dict", "iterate", "iterator"]
+
+[tool.poetry.dependencies]
+python = "*"
+mo-dots = ">=3.135.20303"
+dotty-dict = ">=1.3.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

@@ -14,6 +14,7 @@ keywords = ["python", "python3", "data", "dict", "utilities", "util", "tools", "
 python = "*"
 mo-dots = ">=3.135.20303"
 dotty-dict = ">=1.3.0"
+traversy = "^0.1.2"
 
 [tool.poetry.dev-dependencies]
 

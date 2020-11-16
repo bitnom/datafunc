@@ -1,68 +1,69 @@
 [[package]]
-category = "main"
-description = "Dictionary wrapper for quick access to deeply nested keys."
 name = "dotty-dict"
+version = "1.3.0"
+description = "Dictionary wrapper for quick access to deeply nested keys."
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.3.0"
 
 [package.dependencies]
 setuptools_scm = "*"
 
 [[package]]
-category = "main"
-description = "More Dots! Dot-access to Python dicts like Javascript"
 name = "mo-dots"
+version = "3.135.20303"
+description = "More Dots! Dot-access to Python dicts like Javascript"
+category = "main"
 optional = false
 python-versions = "*"
-version = "3.135.20303"
 
 [package.dependencies]
 mo-future = "3.130.20302"
 mo-imports = "3.135.20303"
 
 [[package]]
-category = "main"
-description = "More future! Make Python 2/3 compatibility a bit easier"
 name = "mo-future"
+version = "3.130.20302"
+description = "More future! Make Python 2/3 compatibility a bit easier"
+category = "main"
 optional = false
 python-versions = "*"
-version = "3.130.20302"
 
 [[package]]
-category = "main"
-description = "More Imports! - Delayed importing"
 name = "mo-imports"
+version = "3.135.20303"
+description = "More Imports! - Delayed importing"
+category = "main"
 optional = false
 python-versions = "*"
-version = "3.135.20303"
 
 [package.dependencies]
 mo-future = "3.130.20302"
 
 [[package]]
-category = "main"
-description = "the blessed package to manage your versions by scm tags"
 name = "setuptools-scm"
+version = "1.15.7"
+description = "the blessed package to manage your versions by scm tags"
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.15.7"
 
 [[package]]
-category = "main"
-description = "Fast data traversal & manipulation tools."
 name = "traversy"
+version = "0.1.2"
+description = "Fast data traversal & manipulation tools."
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.1.2"
 
 [package.dependencies]
 dotty-dict = ">=1.3.0,<2.0.0"
 mo-dots = ">=3.135.20303"
 
 [metadata]
-content-hash = "dd003cf1e2d801178ffa89f9c085c539665b4d6dc6cb120fa6b5e4291746a72d"
+lock-version = "1.1"
 python-versions = "^3"
+content-hash = "dd003cf1e2d801178ffa89f9c085c539665b4d6dc6cb120fa6b5e4291746a72d"
 
 [metadata.files]
 dotty-dict = [

@@ -232,4 +232,23 @@ crashlytics-build.properties
 fabric.properties
 
 # Editor-based Rest Client
-.idea/*
+.idea/httpRequests
+
+# Android studio 3.1+ serialized cache file
+.idea/caches/build_file_checksums.ser
+.idea/
+.idea/misc.xml
+.idea/modules.xml
+.idea/serialmonitor_settings.xml
+.idea/traversy.iml
+.idea/vcs.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/sonarlint/issuestore/index.pb
+.idea/sonarlint/issuestore/3/4/3486aa170cf6b15dd2d8f07d56c0adbd214252ec
+.idea/sonarlint/issuestore/4/a/4a8486805915245bbbe2e3c8c1a9d680c6843a82
+.idea/sonarlint/issuestore/5/1/517c67555f6dfb57e512f6b2937b87218d53c38b
+.idea/sonarlint/issuestore/5/d/5d07e7d72637aa0d59c89d381fe6dc4cf46e2491
+.idea/sonarlint/issuestore/8/e/8e2edce0d507e1297474f25c00cae94258db38d8
+.idea/sonarlint/issuestore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+.idea/sonarlint/issuestore/a/5/a5cc2925ca8258af241be7e5b0381edf30266302

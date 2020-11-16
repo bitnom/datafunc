@@ -1,72 +1,68 @@
 [[package]]
-name = "dotty-dict"
-version = "1.3.0"
-description = "Dictionary wrapper for quick access to deeply nested keys."
 category = "main"
+description = "Dictionary wrapper for quick access to deeply nested keys."
+name = "dotty-dict"
 optional = false
 python-versions = "*"
+version = "1.3.0"
 
 [package.dependencies]
 setuptools_scm = "*"
 
 [[package]]
-name = "mo-dots"
-version = "3.135.20303"
-description = "More Dots! Dot-access to Python dicts like Javascript"
 category = "main"
+description = "More Dots! Dot-access to Python dicts like Javascript"
+name = "mo-dots"
 optional = false
 python-versions = "*"
+version = "3.135.20303"
 
 [package.dependencies]
 mo-future = "3.130.20302"
 mo-imports = "3.135.20303"
 
 [[package]]
-name = "mo-future"
-version = "3.130.20302"
-description = "More future! Make Python 2/3 compatibility a bit easier"
 category = "main"
+description = "More future! Make Python 2/3 compatibility a bit easier"
+name = "mo-future"
 optional = false
 python-versions = "*"
+version = "3.130.20302"
 
 [[package]]
-name = "mo-imports"
-version = "3.135.20303"
-description = "More Imports! - Delayed importing"
 category = "main"
+description = "More Imports! - Delayed importing"
+name = "mo-imports"
 optional = false
 python-versions = "*"
+version = "3.135.20303"
 
 [package.dependencies]
 mo-future = "3.130.20302"
 
 [[package]]
-name = "setuptools-scm"
-version = "3.5.0"
+category = "main"
 description = "the blessed package to manage your versions by scm tags"
-category = "main"
-optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-
-[package.extras]
-toml = ["toml"]
-
-[[package]]
-name = "traversy"
-version = "0.1.2"
-description = "Fast data traversal & manipulation tools."
-category = "main"
+name = "setuptools-scm"
 optional = false
 python-versions = "*"
+version = "1.15.7"
+
+[[package]]
+category = "main"
+description = "Fast data traversal & manipulation tools."
+name = "traversy"
+optional = false
+python-versions = "*"
+version = "0.1.2"
 
 [package.dependencies]
 dotty-dict = ">=1.3.0,<2.0.0"
 mo-dots = ">=3.135.20303"
 
 [metadata]
-lock-version = "1.1"
-python-versions = "*"
-content-hash = "e9d3fff3148988c08846ffa5774ad8d1a00d938b63e460fc6bfd231eb4f4ad66"
+content-hash = "dd003cf1e2d801178ffa89f9c085c539665b4d6dc6cb120fa6b5e4291746a72d"
+python-versions = "^3"
 
 [metadata.files]
 dotty-dict = [
@@ -82,13 +78,13 @@ mo-imports = [
     {file = "mo-imports-3.135.20303.tar.gz", hash = "sha256:396c4a32204cf8cf2828cfafeb91b330b1d5eff981abd719c4632da5f1719177"},
 ]
 setuptools-scm = [
-    {file = "setuptools_scm-3.5.0-py2.7.egg", hash = "sha256:fa6511072840d7eaad3ea36cc8849f437fefd85b32499a7f6026cba16ebbf63a"},
-    {file = "setuptools_scm-3.5.0-py2.py3-none-any.whl", hash = "sha256:0d23db3d43e0a43eb7196bcf0eb8a4a2eb0561f621ed7ec44b2fdccfd907e38f"},
-    {file = "setuptools_scm-3.5.0-py3.5.egg", hash = "sha256:783c143363091d3cc0d94766a9a14cdfc7ba8d29741004b6fa806ada7a8bf211"},
-    {file = "setuptools_scm-3.5.0-py3.6.egg", hash = "sha256:0a376ca6f48dfe35d2c2bba246751830247b145aec7b7fb81a52091d04226ce2"},
-    {file = "setuptools_scm-3.5.0-py3.7.egg", hash = "sha256:8a8b4109ee1a114f9ee8f7a83836284cb6429d481bd93daf64908a3d64c7c56e"},
-    {file = "setuptools_scm-3.5.0-py3.8.egg", hash = "sha256:e39c234058c25b529739c516651cde028960812ea4a35ee31ab623e9a62b10c8"},
-    {file = "setuptools_scm-3.5.0.tar.gz", hash = "sha256:5bdf21a05792903cafe7ae0c9501182ab52497614fa6b1750d9dbae7b60c1a87"},
+    {file = "setuptools_scm-1.15.7-py2.7.egg", hash = "sha256:a2d12f2bd4fbf4a7ae3101e8cf05857fa4a29d58f3738b278db6a563d55e1e0c"},
+    {file = "setuptools_scm-1.15.7-py2.py3-none-any.whl", hash = "sha256:d6c3cfc9d0ac1dd717a325dca902c52a04b9e11c4f3f9fc7de40c6d910ba9f3e"},
+    {file = "setuptools_scm-1.15.7-py3.3.egg", hash = "sha256:97425bebce92e6a53341b1030a4b55305800fc484cb0ff118c7918ffef4928f1"},
+    {file = "setuptools_scm-1.15.7-py3.4.egg", hash = "sha256:30e6a8efb4d7ee249f87d4dcc344ea0df4bdf6a8d493653c2439cc5bb72be52e"},
+    {file = "setuptools_scm-1.15.7-py3.5.egg", hash = "sha256:62b79f2079e911c7d217514b2fd21eac88410403559203672be1617571760a70"},
+    {file = "setuptools_scm-1.15.7-py3.6.egg", hash = "sha256:0c64df43706824beaf54806daf084b7da72f023dcc196c1f34d9b961866248bf"},
+    {file = "setuptools_scm-1.15.7.tar.gz", hash = "sha256:e163e8a12d2121f77575773cfc2b5988275dc1f1d2541fdf780127c29dbbea9c"},
 ]
 traversy = [
     {file = "traversy-0.1.2-py2.py3-none-any.whl", hash = "sha256:4213695b51bbbaef5359e32fe001833bfd630bfcdec50e16f405ca1da9664a87"},

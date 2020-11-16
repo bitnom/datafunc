@@ -2,16 +2,40 @@ from mo_dots import Data, DataObject, FlatList, from_data, to_data, literal_fiel
 from dotty_dict import Dotty, dotty
 import json
 from traversy import traverse
+from typing import Dict, List, Literal, Tuple, Union, Any, Callable
+
+Boolean = Literal[True, False]
 
 
-def flatten(var):
+def do_nothing(var: Any) -> Any:
+	"""
+	Does nothing but return what it's given. Mainly for
+	default callbacks.
+	:param var: Any
+	:return: Returns var that was given.
+	"""
+	return var
+
+
+def flatten(var: object) -> Data:
+	"""
+	Traverse a dict-like object and return a new one with all
+	the same values but only one layer deep.
+	:param var: Dict-like variable to flatten.
+	:return: A mo-dots dict-like Data object.
+	"""
 	result = Data()
 	for v in traverse(var, output_formatter=to_data):
 		result[literal_field(v.path_str)] = v.value
 	return result
 
 
-def iterable(var):
+def iterable(var: Any) -> Boolean:
+	"""
+	Determine whether or not the input variable is iterable.
+	:param var: Any
+	:return: Boolean
+	"""
 	try:
 		iter(var)
 		return True
@@ -19,19 +43,44 @@ def iterable(var):
 		return False
 
 
-def listlike(var):
+def listlike(var: Any) -> Boolean:
+	"""
+	Determine if the input variable is list-like
+	(Not a str, not dict-like, but is iterable)
+	:param var: Any
+	:return: Boolean
+	"""
 	return not isinstance(var, str) and not dictlike(var) and iterable(var)
 
 
-def mo_dotian(var):
+def mo_dotian(var: Any) -> Boolean:
+	"""
+	Determine whether or not the input var is a mo-dots type.
+	:param var: Any
+	:return: Boolean
+	"""
 	return isinstance(var, (Data, DataObject, FlatList))
 
 
-def from_data_if(var, cond):
-	return from_data(var) if cond(var) else var
+def apply_if(func_to_apply: Callable, var: Any, condition: Callable, else_func=do_nothing) -> Any:
+	"""
+	Apply func_to_apply() to var if condiction() else apply else_func()
+	:param func_to_apply: Callable to pass var to if condition(var) return true
+	:param var: Variable to test against condition and return through func_to_apply() or else_func()
+	:param condition: Callable to test var against. Should return a Boolean.
+	:param else_func: Callable to return var through if condition(var) returns False.
+	:return: func_to_apply(var) if condition(var) returns True, otherwise else_func(var)
+	"""
+	return func_to_apply(var) if condition(var) else else_func(var)
 
 
-def dictlike(var):
+def dictlike(var: Any) -> Boolean:
+	"""
+	Determine whether or not var is dict-like (Can
+	contain dict-like items).
+	:param var: Any variable to check
+	:return: Boolean
+	"""
 	try:
 		var.items()
 		return True
@@ -39,15 +88,35 @@ def dictlike(var):
 		return False
 
 
-def nestable(var):
+def nestable(var: Any) -> Boolean:
+	"""
+	Will return True if input var is either list-like or
+	dict-like.
+	:param var: Any input variable.
+	:return: Boolean
+	"""
 	return dictlike(var) or listlike(var)
 
 
-def jsonify_dictlike_vals(obj):
-	return {k: json.dumps(json.dumps(v, default=from_data)) if nestable(v) else v for k, v in obj.items()}
+def jsonify_nestable_vals(obj: object) -> Data:
+	"""
+	Convert any nestable (Dict-like or list-like) to a dict-like mo-dots
+	Data object of obj's values as JSON strings.
+	:param obj: Any nestable variable.
+	:return: A dict-like mo-dots Data object of obj's values as JSON strings.
+	"""
+	return to_data({k: json.dumps(json.dumps(v, default=from_data)) if nestable(v) else v for k, v in obj.items()})
 
 
-def compare(d1, d2):
+def compare(d1: object, d2: object) -> Data:
+	"""
+	Compare dict-like variable d1 to dict-like variable d2
+	and return a dict-like mo-dots Data object of what's
+	been added, removed, modified, or remained equal in d2
+	:param d1: Dict-like variable as the base variable.
+	:param d2: Dict-like variable to compare/contrast to d1
+	:return: Dict-like mo-dots Data object of differences between d1 and d2.
+	"""
 	d1_keys = set(d1.keys())
 	d2_keys = set(d2.keys())
 	shared_keys = d1_keys.intersection(d2_keys)
@@ -58,7 +127,7 @@ def compare(d1, d2):
 	return to_data({'add': added, 'rm': removed, 'mod': modified, 'eq': same})
 
 
-def function_of(func, func_names):
+def function_of(func: Callable, func_names: Tuple) -> Boolean:
 	"""
 	Determine whether or not a function's (func) name exists in tuple of strings
 	(func_names).
@@ -69,21 +138,25 @@ def function_of(func, func_names):
 	return hasattr(func, '__call__') and func.__name__ in func_names
 
 
-def basevals(d, *attrs):
+def basevals(var: object, *attrs) -> Any:
 	"""
-	This method receives a dict and list of attributes to return the innermost value of the give dict
+	This method receives a dict and list of attributes
+	to return the innermost value of the given dict-like
+	var. This function seems stupid and I don't recall
+	what it was for.
 	"""
 	try:
 		for at in attrs:
-			d = d[at]
-		return d
+			var = var[at]
+		return var
 	except(KeyError, TypeError):
 		return None
 
 
-def vivify(d, *attrs):
+def vivify(var: object, *attrs: str):
 	"""
-	Adds "val" to dict in the hierarchy mentioned via *attrs
+	Adds the last attr variable passed to the dict-like "var"
+	in the hierarchy mentioned via the prior *attrs
 	For ex:
 	vivify(animals, "cat", "leg","fingers", 4) is equivalent to animals["cat"]["leg"]["fingers"]=4
 	This method creates necessary objects until it reaches the final depth
@@ -92,7 +165,7 @@ def vivify(d, *attrs):
 	https://gist.github.com/hrldcpr/2012250#gistcomment-1779319
 	"""
 	for attr in basevals[:-2]:
-		if type(d.get(attr)) not in (dict, Data, Dotty, DataObject):
-			d[attr] = {}
-		d = d[attr]
-	d[attrs[-2]] = attrs[-1]
+		if type(var.get(attr)) not in (dict, Data, Dotty, DataObject):
+			var[attr] = {}
+		var = var[attr]
+	var[attrs[-2]] = attrs[-1]

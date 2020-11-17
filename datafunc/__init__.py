@@ -63,7 +63,7 @@ def mo_dotian(var: Any) -> Boolean:
 	return isinstance(var, (Data, DataObject, FlatList))
 
 
-def apply_if(func_to_apply: Callable, var: Any, condition: Callable, else_func=do_nothing) -> Any:
+def apply_if(func_to_apply: Callable, var: Any, condition: Callable, else_func: Callable = do_nothing) -> Any:
 	"""
 	Apply func_to_apply() to var if condiction() else apply else_func()
 	:param func_to_apply: Callable to pass var to if condition(var) return true

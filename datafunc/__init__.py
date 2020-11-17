@@ -3,6 +3,7 @@ from dotty_dict import Dotty, dotty
 import json
 from traversy import traverse
 from typing import Dict, List, Literal, Tuple, Union, Any, Callable
+import copy
 
 Boolean = Literal[True, False]
 
@@ -169,3 +170,30 @@ def vivify(var: object, *attrs: str):
 			var[attr] = {}
 		var = var[attr]
 	var[attrs[-2]] = attrs[-1]
+
+
+def duplicate(data: object) -> object:
+	"""
+	Convenience method for copy.deepcopy()
+	:param data: Any dict, mo-dots, or dotty object.
+	:return: A deep copy of the data.
+	"""
+	return copy.deepcopy(data)
+
+
+def add_sibling(data: object, node_path: List, new_key: str, new_data: Any, _i: int = 0):
+	"""
+	Traversal-safe method to add a siblings data node.
+	:param data: The data object you're traversing.
+	:param node_path: List of path segments pointing to the node you're creating a
+			sibling of. Same as node_path of traverse()
+	:param new_key: The sibling key to create.
+	:param new_data: The new data to be stored at the key.
+	:param _i: Depth of node_path iterator.
+	"""
+	if _i < len(node_path) - 1:
+		return add_sibling(data[node_path[_i]], node_path, new_key, new_data, _i + 1)
+	else:
+		data[new_key] = new_data
+
+

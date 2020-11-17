@@ -12,9 +12,9 @@ install_requires = \
 
 setup_kwargs = {
     'name': 'datafunc',
-    'version': '0.0.3',
+    'version': '0.0.4',
     'description': 'Python functions for various dict, list, and other data structures.',
-    'long_description': '# datafunc\n\nPython package of various functions for dict, list, and other data structures.\n\n**License: MIT**\n\n### Changelog\n- **11/17/2020 - 0.0.3** : Added `duplicate()` and `add_sibling()` methods. Added some missing type declarations.\n- **11/15/2020 - 0.0.2** : Type annotations & minor refactors.\n- **11/15/2020 - 0.0.1** : Initial methods.',
+    'long_description': '# datafunc\n\nPython package of various functions for dict, list, and other data structures.\n\n**License: MIT**\n\n### Changelog\n- **11/17/2020 - 0.0.4** : Add missing type annotation. Generate docs.\n- **11/17/2020 - 0.0.3** : Added `duplicate()` and `add_sibling()` methods. Added some missing type declarations.\n- **11/15/2020 - 0.0.2** : Type annotations & minor refactors.\n- **11/15/2020 - 0.0.1** : Initial methods.',
     'author': 'Tom A.',
     'author_email': '14287229+TensorTom@users.noreply.github.com',
     'maintainer': None,
@@ -23,7 +23,7 @@ setup_kwargs = {
     'packages': packages,
     'package_data': package_data,
     'install_requires': install_requires,
-    'python_requires': '>=3,<4',
+    'python_requires': '>=3.6,<4.0',
 }
 
 

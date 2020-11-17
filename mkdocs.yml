@@ -1,4 +1,7 @@
 site_name: datafunc
+repo_url: https://github.com/TensorTom/datafunc
+site_author: Tom A.
+site_description: Python package of various functions for dict, list, and other data structures.
 
 theme:
   name: "material"

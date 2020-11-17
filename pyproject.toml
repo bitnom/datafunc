@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "datafunc"
-version = "0.0.3"
+version = "0.0.4"
 description = "Python functions for various dict, list, and other data structures."
 license = "MIT"
 readme = "README.md"
@@ -11,12 +11,15 @@ keywords = ["python", "python3", "data", "dict", "utilities", "util", "tools", "
     "data", "mo-dots", "list", "dotty_dict", "iterate", "iterator"]
 
 [tool.poetry.dependencies]
-python = "^3"
+python = ">=3.6,<4"
 mo-dots = "*"
 dotty-dict = "*"
 traversy = ">=0.1.2"
 
 [tool.poetry.dev-dependencies]
+mkdocs = "^1.1.2"
+mkdocs-material = "^6.1.5"
+mkdocstrings = "^0.13.6"
 
 [build-system]
 requires = ["poetry>=0.12"]

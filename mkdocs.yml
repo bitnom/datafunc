@@ -1,0 +1,11 @@
+site_name: datafunc
+
+theme:
+  name: "material"
+
+plugins:
+  - search
+  - mkdocstrings:
+      watch:
+        - datafunc/
+      custom_templates: docs/templates

@@ -1,0 +1,648 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Python package of various functions for dict, list, and other data structures." name="description"/>
+<meta content="Tom A." name="author"/>
+<link href="assets/images/favicon.png" rel="shortcut icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-6.1.5" name="generator"/>
+<title>datafunc</title>
+<link href="assets/stylesheets/main.21aed14c.min.css" rel="stylesheet"/>
+<link href="assets/stylesheets/palette.196e0c26.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+</head>
+<body data-md-color-accent="none" data-md-color-primary="none" data-md-color-scheme="" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#datafunc_1">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header-nav md-grid">
+<a aria-label="datafunc" class="md-header-nav__button md-logo" href="." title="datafunc">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+<label class="md-header-nav__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header-nav__title" data-md-component="header-title">
+<div class="md-header-nav__ellipsis md-ellipsis">
+          datafunc
+        </div>
+</div>
+<label class="md-header-nav__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" data-md-component="search-reset" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header-nav__source">
+<a class="md-source" href="https://github.com/TensorTom/datafunc/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="datafunc" class="md-nav__button md-logo" href="." title="datafunc">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+    datafunc
+  </label>
+<div class="md-nav__source">
+<a class="md-source" href="https://github.com/TensorTom/datafunc/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+        datafunc
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href=".">
+      datafunc
+    </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#changelog">
+    Changelog
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#changelog">
+    Changelog
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/TensorTom/datafunc/edit/master/docs/index.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+</a>
+<h1 id="datafunc_1">datafunc</h1>
+<p>Python package of various functions for dict, list, and other data structures.</p>
+<p><a href="https://gitHub.com/TensorTom/datafunc/graphs/commit-activity"><img alt="Actively Maintained" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"/></a>
+<a href="https://pypi.python.org/pypi/datafunc/"><img alt="MIT License" src="https://img.shields.io/pypi/l/ansicolortags.svg"/></a>
+<a href="https://pypi.python.org/pypi/datafunc/"><img alt="PyPI pyversions" src="https://img.shields.io/pypi/pyversions/ansicolortags.svg"/></a></p>
+<h3 id="changelog">Changelog</h3>
+<ul>
+<li><strong>11/17/2020 - 0.0.4</strong> : Add missing type annotation. Generate docs.</li>
+<li><strong>11/17/2020 - 0.0.3</strong> : Added <code>duplicate()</code> and <code>add_sibling()</code> methods. Added some missing type declarations.</li>
+<li><strong>11/15/2020 - 0.0.2</strong> : Type annotations &amp; minor refactors.</li>
+<li><strong>11/15/2020 - 0.0.1</strong> : Initial methods.</li>
+</ul>
+<h1 id="reference">Reference</h1>
+<div class="doc doc-object doc-module">
+<h2 class="hidden-toc" href="#datafunc" id="datafunc" style="visibility: hidden; position: absolute;">
+</h2>
+<div class="doc doc-contents first">
+<div class="doc doc-children">
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="datafunc.add_sibling">
+<code class="highlight language-python">
+add_sibling<span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">node_path</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span> <span class="n">new_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">new_data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">_i</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Traversal-safe method to add a siblings data node.
+:param data: The data object you're traversing.
+:param node_path: List of path segments pointing to the node you're creating a
+                sibling of. Same as node_path of traverse()
+:param new_key: The sibling key to create.
+:param new_data: The new data to be stored at the key.
+:param _i: Depth of node_path iterator.</p>
+<details class="quote">
+<summary>Source code in <code>datafunc/__init__.py</code></summary>
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">add_sibling</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">node_path</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span> <span class="n">new_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">new_data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">_i</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+	<span class="sd">"""</span>
+<span class="sd">	Traversal-safe method to add a siblings data node.</span>
+<span class="sd">	:param data: The data object you're traversing.</span>
+<span class="sd">	:param node_path: List of path segments pointing to the node you're creating a</span>
+<span class="sd">			sibling of. Same as node_path of traverse()</span>
+<span class="sd">	:param new_key: The sibling key to create.</span>
+<span class="sd">	:param new_data: The new data to be stored at the key.</span>
+<span class="sd">	:param _i: Depth of node_path iterator.</span>
+<span class="sd">	"""</span>
+	<span class="k">if</span> <span class="n">_i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">node_path</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+		<span class="k">return</span> <span class="n">add_sibling</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">node_path</span><span class="p">[</span><span class="n">_i</span><span class="p">]],</span> <span class="n">node_path</span><span class="p">,</span> <span class="n">new_key</span><span class="p">,</span> <span class="n">new_data</span><span class="p">,</span> <span class="n">_i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">data</span><span class="p">[</span><span class="n">new_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_data</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="datafunc.apply_if">
+<code class="highlight language-python">
+apply_if<span class="p">(</span><span class="n">func_to_apply</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">var</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">condition</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">else_func</span><span class="p">:</span> <span class="n">Callable</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">function</span> <span class="n">do_nothing</span> <span class="n">at</span> <span class="mh">0x7f77470ccdc0</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Apply func_to_apply() to var if condiction() else apply else_func()
+:param func_to_apply: Callable to pass var to if condition(var) return true
+:param var: Variable to test against condition and return through func_to_apply() or else_func()
+:param condition: Callable to test var against. Should return a Boolean.
+:param else_func: Callable to return var through if condition(var) returns False.
+:return: func_to_apply(var) if condition(var) returns True, otherwise else_func(var)</p>
+<details class="quote">
+<summary>Source code in <code>datafunc/__init__.py</code></summary>
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">apply_if</span><span class="p">(</span><span class="n">func_to_apply</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">var</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">condition</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">else_func</span><span class="p">:</span> <span class="n">Callable</span> <span class="o">=</span> <span class="n">do_nothing</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+	<span class="sd">"""</span>
+<span class="sd">	Apply func_to_apply() to var if condiction() else apply else_func()</span>
+<span class="sd">	:param func_to_apply: Callable to pass var to if condition(var) return true</span>
+<span class="sd">	:param var: Variable to test against condition and return through func_to_apply() or else_func()</span>
+<span class="sd">	:param condition: Callable to test var against. Should return a Boolean.</span>
+<span class="sd">	:param else_func: Callable to return var through if condition(var) returns False.</span>
+<span class="sd">	:return: func_to_apply(var) if condition(var) returns True, otherwise else_func(var)</span>
+<span class="sd">	"""</span>
+	<span class="k">return</span> <span class="n">func_to_apply</span><span class="p">(</span><span class="n">var</span><span class="p">)</span> <span class="k">if</span> <span class="n">condition</span><span class="p">(</span><span class="n">var</span><span class="p">)</span> <span class="k">else</span> <span class="n">else_func</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="datafunc.basevals">
+<code class="highlight language-python">
+basevals<span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="o">*</span><span class="n">attrs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>This method receives a dict and list of attributes
+to return the innermost value of the given dict-like
+var. This function seems stupid and I don't recall
+what it was for.</p>
+<details class="quote">
+<summary>Source code in <code>datafunc/__init__.py</code></summary>
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">basevals</span><span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="o">*</span><span class="n">attrs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+	<span class="sd">"""</span>
+<span class="sd">	This method receives a dict and list of attributes</span>
+<span class="sd">	to return the innermost value of the given dict-like</span>
+<span class="sd">	var. This function seems stupid and I don't recall</span>
+<span class="sd">	what it was for.</span>
+<span class="sd">	"""</span>
+	<span class="k">try</span><span class="p">:</span>
+		<span class="k">for</span> <span class="n">at</span> <span class="ow">in</span> <span class="n">attrs</span><span class="p">:</span>
+			<span class="n">var</span> <span class="o">=</span> <span class="n">var</span><span class="p">[</span><span class="n">at</span><span class="p">]</span>
+		<span class="k">return</span> <span class="n">var</span>
+	<span class="k">except</span><span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">None</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="datafunc.compare">
+<code class="highlight language-python">
+compare<span class="p">(</span><span class="n">d1</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">d2</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Data</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Compare dict-like variable d1 to dict-like variable d2
+and return a dict-like mo-dots Data object of what's
+been added, removed, modified, or remained equal in d2
+:param d1: Dict-like variable as the base variable.
+:param d2: Dict-like variable to compare/contrast to d1
+:return: Dict-like mo-dots Data object of differences between d1 and d2.</p>
+<details class="quote">
+<summary>Source code in <code>datafunc/__init__.py</code></summary>
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">compare</span><span class="p">(</span><span class="n">d1</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">d2</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Data</span><span class="p">:</span>
+	<span class="sd">"""</span>
+<span class="sd">	Compare dict-like variable d1 to dict-like variable d2</span>
+<span class="sd">	and return a dict-like mo-dots Data object of what's</span>
+<span class="sd">	been added, removed, modified, or remained equal in d2</span>
+<span class="sd">	:param d1: Dict-like variable as the base variable.</span>
+<span class="sd">	:param d2: Dict-like variable to compare/contrast to d1</span>
+<span class="sd">	:return: Dict-like mo-dots Data object of differences between d1 and d2.</span>
+<span class="sd">	"""</span>
+	<span class="n">d1_keys</span><span class="p">:</span> <span class="n">Set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+	<span class="n">d2_keys</span><span class="p">:</span> <span class="n">Set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">d2</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+	<span class="n">shared_keys</span><span class="p">:</span> <span class="n">Set</span> <span class="o">=</span> <span class="n">d1_keys</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">d2_keys</span><span class="p">)</span>
+	<span class="n">added</span><span class="p">:</span> <span class="n">Set</span> <span class="o">=</span> <span class="n">d1_keys</span> <span class="o">-</span> <span class="n">d2_keys</span>
+	<span class="n">removed</span><span class="p">:</span> <span class="n">Set</span> <span class="o">=</span> <span class="n">d2_keys</span> <span class="o">-</span> <span class="n">d1_keys</span>
+	<span class="n">modified</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">o</span><span class="p">:</span> <span class="p">(</span><span class="n">d1</span><span class="p">[</span><span class="n">o</span><span class="p">],</span> <span class="n">d2</span><span class="p">[</span><span class="n">o</span><span class="p">])</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">shared_keys</span> <span class="k">if</span> <span class="n">d1</span><span class="p">[</span><span class="n">o</span><span class="p">]</span> <span class="o">!=</span> <span class="n">d2</span><span class="p">[</span><span class="n">o</span><span class="p">]}</span>
+	<span class="n">same</span><span class="p">:</span> <span class="n">Set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">o</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">shared_keys</span> <span class="k">if</span> <span class="n">d1</span><span class="p">[</span><span class="n">o</span><span class="p">]</span> <span class="o">==</span> <span class="n">d2</span><span class="p">[</span><span class="n">o</span><span class="p">])</span>
+	<span class="k">return</span> <span class="n">to_data</span><span class="p">({</span><span class="s1">'add'</span><span class="p">:</span> <span class="n">added</span><span class="p">,</span> <span class="s1">'rm'</span><span class="p">:</span> <span class="n">removed</span><span class="p">,</span> <span class="s1">'mod'</span><span class="p">:</span> <span class="n">modified</span><span class="p">,</span> <span class="s1">'eq'</span><span class="p">:</span> <span class="n">same</span><span class="p">})</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="datafunc.dictlike">
+<code class="highlight language-python">
+dictlike<span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Literal</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Determine whether or not var is dict-like (Can
+contain dict-like items).
+:param var: Any variable to check
+:return: Boolean</p>
+<details class="quote">
+<summary>Source code in <code>datafunc/__init__.py</code></summary>
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">dictlike</span><span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Boolean</span><span class="p">:</span>
+	<span class="sd">"""</span>
+<span class="sd">	Determine whether or not var is dict-like (Can</span>
+<span class="sd">	contain dict-like items).</span>
+<span class="sd">	:param var: Any variable to check</span>
+<span class="sd">	:return: Boolean</span>
+<span class="sd">	"""</span>
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">var</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+		<span class="k">return</span> <span class="kc">True</span>
+	<span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">False</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="datafunc.do_nothing">
+<code class="highlight language-python">
+do_nothing<span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Does nothing but return what it's given. Mainly for
+default callbacks.
+:param var: Any
+:return: Returns var that was given.</p>
+<details class="quote">
+<summary>Source code in <code>datafunc/__init__.py</code></summary>
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">do_nothing</span><span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+	<span class="sd">"""</span>
+<span class="sd">	Does nothing but return what it's given. Mainly for</span>
+<span class="sd">	default callbacks.</span>
+<span class="sd">	:param var: Any</span>
+<span class="sd">	:return: Returns var that was given.</span>
+<span class="sd">	"""</span>
+	<span class="k">return</span> <span class="n">var</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="datafunc.duplicate">
+<code class="highlight language-python">
+duplicate<span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Convenience method for copy.deepcopy()
+:param data: Any dict, mo-dots, or dotty object.
+:return: A deep copy of the data.</p>
+<details class="quote">
+<summary>Source code in <code>datafunc/__init__.py</code></summary>
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">duplicate</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
+	<span class="sd">"""</span>
+<span class="sd">	Convenience method for copy.deepcopy()</span>
+<span class="sd">	:param data: Any dict, mo-dots, or dotty object.</span>
+<span class="sd">	:return: A deep copy of the data.</span>
+<span class="sd">	"""</span>
+	<span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="datafunc.flatten">
+<code class="highlight language-python">
+flatten<span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Data</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Traverse a dict-like object and return a new one with all
+the same values but only one layer deep.
+:param var: Dict-like variable to flatten.
+:return: A mo-dots dict-like Data object.</p>
+<details class="quote">
+<summary>Source code in <code>datafunc/__init__.py</code></summary>
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Data</span><span class="p">:</span>
+	<span class="sd">"""</span>
+<span class="sd">	Traverse a dict-like object and return a new one with all</span>
+<span class="sd">	the same values but only one layer deep.</span>
+<span class="sd">	:param var: Dict-like variable to flatten.</span>
+<span class="sd">	:return: A mo-dots dict-like Data object.</span>
+<span class="sd">	"""</span>
+	<span class="n">result</span> <span class="o">=</span> <span class="n">Data</span><span class="p">()</span>
+	<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">traverse</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">output_formatter</span><span class="o">=</span><span class="n">to_data</span><span class="p">):</span>
+		<span class="n">result</span><span class="p">[</span><span class="n">literal_field</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">path_str</span><span class="p">)]</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">value</span>
+	<span class="k">return</span> <span class="n">result</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="datafunc.function_of">
+<code class="highlight language-python">
+function_of<span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">func_names</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Literal</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Determine whether or not a function's (func) name exists in tuple of strings
+(func_names).
+:param func: The callable function to test.
+:param func_names: Tuple of function names as strings ("func1", "func2", "func3,)
+:return: Boolean True (func is of func_names) or False (func is not of func_names)</p>
+<details class="quote">
+<summary>Source code in <code>datafunc/__init__.py</code></summary>
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">function_of</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">func_names</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Boolean</span><span class="p">:</span>
+	<span class="sd">"""</span>
+<span class="sd">	Determine whether or not a function's (func) name exists in tuple of strings</span>
+<span class="sd">	(func_names).</span>
+<span class="sd">	:param func: The callable function to test.</span>
+<span class="sd">	:param func_names: Tuple of function names as strings ("func1", "func2", "func3,)</span>
+<span class="sd">	:return: Boolean True (func is of func_names) or False (func is not of func_names)</span>
+<span class="sd">	"""</span>
+	<span class="k">return</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="s1">'__call__'</span><span class="p">)</span> <span class="ow">and</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span> <span class="ow">in</span> <span class="n">func_names</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="datafunc.iterable">
+<code class="highlight language-python">
+iterable<span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Literal</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Determine whether or not the input variable is iterable.
+:param var: Any
+:return: Boolean</p>
+<details class="quote">
+<summary>Source code in <code>datafunc/__init__.py</code></summary>
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">iterable</span><span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Boolean</span><span class="p">:</span>
+	<span class="sd">"""</span>
+<span class="sd">	Determine whether or not the input variable is iterable.</span>
+<span class="sd">	:param var: Any</span>
+<span class="sd">	:return: Boolean</span>
+<span class="sd">	"""</span>
+	<span class="k">try</span><span class="p">:</span>
+		<span class="nb">iter</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+		<span class="k">return</span> <span class="kc">True</span>
+	<span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="datafunc.jsonify_nestable_vals">
+<code class="highlight language-python">
+jsonify_nestable_vals<span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Data</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Convert any nestable (Dict-like or list-like) to a dict-like mo-dots
+Data object of obj's values as JSON strings.
+:param obj: Any nestable variable.
+:return: A dict-like mo-dots Data object of obj's values as JSON strings.</p>
+<details class="quote">
+<summary>Source code in <code>datafunc/__init__.py</code></summary>
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">jsonify_nestable_vals</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Data</span><span class="p">:</span>
+	<span class="sd">"""</span>
+<span class="sd">	Convert any nestable (Dict-like or list-like) to a dict-like mo-dots</span>
+<span class="sd">	Data object of obj's values as JSON strings.</span>
+<span class="sd">	:param obj: Any nestable variable.</span>
+<span class="sd">	:return: A dict-like mo-dots Data object of obj's values as JSON strings.</span>
+<span class="sd">	"""</span>
+	<span class="k">return</span> <span class="n">to_data</span><span class="p">({</span><span class="n">k</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">from_data</span><span class="p">))</span> <span class="k">if</span> <span class="n">nestable</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">else</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">items</span><span class="p">()})</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="datafunc.listlike">
+<code class="highlight language-python">
+listlike<span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Literal</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Determine if the input variable is list-like
+(Not a str, not dict-like, but is iterable)
+:param var: Any
+:return: Boolean</p>
+<details class="quote">
+<summary>Source code in <code>datafunc/__init__.py</code></summary>
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">listlike</span><span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Boolean</span><span class="p">:</span>
+	<span class="sd">"""</span>
+<span class="sd">	Determine if the input variable is list-like</span>
+<span class="sd">	(Not a str, not dict-like, but is iterable)</span>
+<span class="sd">	:param var: Any</span>
+<span class="sd">	:return: Boolean</span>
+<span class="sd">	"""</span>
+	<span class="k">return</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">dictlike</span><span class="p">(</span><span class="n">var</span><span class="p">)</span> <span class="ow">and</span> <span class="n">iterable</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="datafunc.mo_dotian">
+<code class="highlight language-python">
+mo_dotian<span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Literal</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Determine whether or not the input var is a mo-dots type.
+:param var: Any
+:return: Boolean</p>
+<details class="quote">
+<summary>Source code in <code>datafunc/__init__.py</code></summary>
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">mo_dotian</span><span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Boolean</span><span class="p">:</span>
+	<span class="sd">"""</span>
+<span class="sd">	Determine whether or not the input var is a mo-dots type.</span>
+<span class="sd">	:param var: Any</span>
+<span class="sd">	:return: Boolean</span>
+<span class="sd">	"""</span>
+	<span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="p">(</span><span class="n">Data</span><span class="p">,</span> <span class="n">DataObject</span><span class="p">,</span> <span class="n">FlatList</span><span class="p">))</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="datafunc.nestable">
+<code class="highlight language-python">
+nestable<span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Literal</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Will return True if input var is either list-like or
+dict-like.
+:param var: Any input variable.
+:return: Boolean</p>
+<details class="quote">
+<summary>Source code in <code>datafunc/__init__.py</code></summary>
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">nestable</span><span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Boolean</span><span class="p">:</span>
+	<span class="sd">"""</span>
+<span class="sd">	Will return True if input var is either list-like or</span>
+<span class="sd">	dict-like.</span>
+<span class="sd">	:param var: Any input variable.</span>
+<span class="sd">	:return: Boolean</span>
+<span class="sd">	"""</span>
+	<span class="k">return</span> <span class="n">dictlike</span><span class="p">(</span><span class="n">var</span><span class="p">)</span> <span class="ow">or</span> <span class="n">listlike</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h2 class="doc doc-heading" id="datafunc.vivify">
+<code class="highlight language-python">
+vivify<span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="o">*</span><span class="n">attrs</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Adds the last attr variable passed to the dict-like "var"
+in the hierarchy mentioned via the prior *attrs
+For ex:
+vivify(animals, "cat", "leg","fingers", 4) is equivalent to animals["cat"]["leg"]["fingers"]=4
+This method creates necessary objects until it reaches the final depth
+This behaviour is also known as autovivification and plenty of implementation are around
+This implementation addresses the corner case of replacing existing primitives
+https://gist.github.com/hrldcpr/2012250#gistcomment-1779319</p>
+<details class="quote">
+<summary>Source code in <code>datafunc/__init__.py</code></summary>
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">vivify</span><span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="o">*</span><span class="n">attrs</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+	<span class="sd">"""</span>
+<span class="sd">	Adds the last attr variable passed to the dict-like "var"</span>
+<span class="sd">	in the hierarchy mentioned via the prior *attrs</span>
+<span class="sd">	For ex:</span>
+<span class="sd">	vivify(animals, "cat", "leg","fingers", 4) is equivalent to animals["cat"]["leg"]["fingers"]=4</span>
+<span class="sd">	This method creates necessary objects until it reaches the final depth</span>
+<span class="sd">	This behaviour is also known as autovivification and plenty of implementation are around</span>
+<span class="sd">	This implementation addresses the corner case of replacing existing primitives</span>
+<span class="sd">	https://gist.github.com/hrldcpr/2012250#gistcomment-1779319</span>
+<span class="sd">	"""</span>
+	<span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">basevals</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]:</span>
+		<span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">var</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">attr</span><span class="p">))</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="n">Data</span><span class="p">,</span> <span class="n">Dotty</span><span class="p">,</span> <span class="n">DataObject</span><span class="p">):</span>
+			<span class="n">var</span><span class="p">[</span><span class="n">attr</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="n">var</span> <span class="o">=</span> <span class="n">var</span><span class="p">[</span><span class="n">attr</span><span class="p">]</span>
+	<span class="n">var</span><span class="p">[</span><span class="n">attrs</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]]</span> <span class="o">=</span> <span class="n">attrs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src="assets/javascripts/vendor.7e0ee788.min.js"></script>
+<script src="assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+<script>
+        app = initialize({
+          base: ".",
+          features: [],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+</body>
+</html>

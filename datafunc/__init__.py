@@ -2,7 +2,7 @@ from mo_dots import Data, DataObject, FlatList, from_data, to_data, literal_fiel
 from dotty_dict import Dotty, dotty
 import json
 from traversy import traverse
-from typing import Dict, List, Literal, Tuple, Union, Any, Callable
+from typing import Dict, List, Literal, Tuple, Union, Any, Callable, Set
 import copy
 
 Boolean = Literal[True, False]
@@ -118,13 +118,13 @@ def compare(d1: object, d2: object) -> Data:
 	:param d2: Dict-like variable to compare/contrast to d1
 	:return: Dict-like mo-dots Data object of differences between d1 and d2.
 	"""
-	d1_keys = set(d1.keys())
-	d2_keys = set(d2.keys())
-	shared_keys = d1_keys.intersection(d2_keys)
-	added = d1_keys - d2_keys
-	removed = d2_keys - d1_keys
-	modified = {o: (d1[o], d2[o]) for o in shared_keys if d1[o] != d2[o]}
-	same = set(o for o in shared_keys if d1[o] == d2[o])
+	d1_keys: Set = set(d1.keys())
+	d2_keys: Set = set(d2.keys())
+	shared_keys: Set = d1_keys.intersection(d2_keys)
+	added: Set = d1_keys - d2_keys
+	removed: Set = d2_keys - d1_keys
+	modified: Dict = {o: (d1[o], d2[o]) for o in shared_keys if d1[o] != d2[o]}
+	same: Set = set(o for o in shared_keys if d1[o] == d2[o])
 	return to_data({'add': added, 'rm': removed, 'mod': modified, 'eq': same})
 
 

@@ -1,0 +1,5 @@
+dephell==0.*,>=0.8.3
+mkdocs==1.*,>=1.1.2
+mkdocs-material==6.*,>=6.1.5
+mkdocstrings==0.*,>=0.13.6
+pydoc-markdown==3.*,>=3.8.0

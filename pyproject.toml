@@ -7,6 +7,7 @@ readme = "README.md"
 authors = ["Tom A. <14287229+TensorTom@users.noreply.github.com>"]
 homepage = "https://github.com/tensortom/datafunc"
 repository = "https://github.com/tensortom/datafunc"
+documentation = "https://tensortom.github.io/datafunc/"
 keywords = ["python", "python3", "data", "dict", "utilities", "util", "tools", "dict", "dictionary",
     "data", "mo-dots", "list", "dotty_dict", "iterate", "iterator"]
 

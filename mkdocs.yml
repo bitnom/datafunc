@@ -4,7 +4,7 @@ site_author: Tom A.
 site_description: Python package of various functions for dict, list, and other data structures.
 
 theme:
-  name: "material"
+  name: "readthedocs"  # or material
 
 plugins:
   - search

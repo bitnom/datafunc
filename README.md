@@ -1,6 +1,7 @@
 # datafunc
 
-Python package of various functions for dict, list, and other data structures.
+Python package of various functions for dict, list, and other data structures. Check out the
+[documentation](https://tensortom.github.io/datafunc/).
 
 [![Actively Maintained](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://gitHub.com/TensorTom/datafunc/graphs/commit-activity)
 [![MIT License](https://img.shields.io/pypi/l/ansicolortags.svg)](https://pypi.python.org/pypi/datafunc/)

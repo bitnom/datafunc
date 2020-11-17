@@ -20,8 +20,6 @@ traversy = ">=0.1.2"
 mkdocs = "^1.1.2"
 mkdocs-material = "^6.1.5"
 mkdocstrings = "^0.13.6"
-mkdocs-combine = {git = "https://github.com/twardoch/mkdocs-combine.git"}
-mkdocs-pandoc = "^0.2.6"
 pydoc-markdown = "^3.8.0"
 
 [build-system]

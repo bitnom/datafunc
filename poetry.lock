@@ -168,17 +168,6 @@ importlib-metadata = {version = "*", markers = "python_version < \"3.8\""}
 testing = ["coverage", "pyyaml"]
 
 [[package]]
-name = "markdown-include"
-version = "0.6.0"
-description = "This is an extension to Python-Markdown which provides an \"include\" function, similar to that found in LaTeX (and also the C pre-processor and Fortran). I originally wrote it for my FORD Fortran auto-documentation generator."
-category = "dev"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-markdown = "*"
-
-[[package]]
 name = "markupsafe"
 version = "1.1.1"
 description = "Safely add untrusted strings to HTML/XML markup."
@@ -202,26 +191,6 @@ lunr = {version = "0.5.8", extras = ["languages"]}
 Markdown = ">=3.2.1"
 PyYAML = ">=3.10"
 tornado = ">=5.0"
-
-[[package]]
-name = "mkdocs-combine"
-version = "0.4.0.0"
-description = ""
-category = "dev"
-optional = false
-python-versions = "*"
-develop = false
-
-[package.dependencies]
-Markdown = ">=3.0.1"
-markdown-include = ">=0.5.1"
-mkdocs = ">=1.0.4"
-
-[package.source]
-type = "git"
-url = "https://github.com/twardoch/mkdocs-combine.git"
-reference = "master"
-resolved_reference = "df0dcdc1f21b290845bf553c4353e9d73a8c09dc"
 
 [[package]]
 name = "mkdocs-material"
@@ -248,18 +217,6 @@ python-versions = ">=3.5"
 
 [package.dependencies]
 mkdocs-material = ">=5.0.0"
-
-[[package]]
-name = "mkdocs-pandoc"
-version = "0.2.6"
-description = "A translator from mkdocs style markdown to pandoc style markdown"
-category = "dev"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-markdown-include = ">=0.5.1"
-mkdocs = ">=0.14.0"
 
 [[package]]
 name = "mkdocstrings"
@@ -676,7 +633,7 @@ testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.6,<4.0"
-content-hash = "ee934d90306fded53d8cdf54fe784eb1fd88ebdbbcffb7ed4a701bdced4b8c2e"
+content-hash = "1dc2448db1a043c1dc1789f3373302b33ef41b2b1d3068bd8fc0c43677974519"
 
 [metadata.files]
 beautifulsoup4 = [
@@ -737,9 +694,6 @@ markdown = [
     {file = "Markdown-3.3.3-py3-none-any.whl", hash = "sha256:c109c15b7dc20a9ac454c9e6025927d44460b85bd039da028d85e2b6d0bcc328"},
     {file = "Markdown-3.3.3.tar.gz", hash = "sha256:5d9f2b5ca24bc4c7a390d22323ca4bad200368612b5aaa7796babf971d2b2f18"},
 ]
-markdown-include = [
-    {file = "markdown-include-0.6.0.tar.gz", hash = "sha256:6f5d680e36f7780c7f0f61dca53ca581bd50d1b56137ddcd6353efafa0c3e4a2"},
-]
 markupsafe = [
     {file = "MarkupSafe-1.1.1-cp27-cp27m-macosx_10_6_intel.whl", hash = "sha256:09027a7803a62ca78792ad89403b1b7a73a01c8cb65909cd876f7fcebd79b161"},
     {file = "MarkupSafe-1.1.1-cp27-cp27m-manylinux1_i686.whl", hash = "sha256:e249096428b3ae81b08327a63a485ad0878de3fb939049038579ac0ef61e17e7"},
@@ -779,7 +733,6 @@ mkdocs = [
     {file = "mkdocs-1.1.2-py3-none-any.whl", hash = "sha256:096f52ff52c02c7e90332d2e53da862fde5c062086e1b5356a6e392d5d60f5e9"},
     {file = "mkdocs-1.1.2.tar.gz", hash = "sha256:f0b61e5402b99d7789efa032c7a74c90a20220a9c81749da06dbfbcbd52ffb39"},
 ]
-mkdocs-combine = []
 mkdocs-material = [
     {file = "mkdocs-material-6.1.5.tar.gz", hash = "sha256:9a902d29046d47f45576ac6ccdc59240b6e5ec38ba6157ca827a11b09bbe927a"},
     {file = "mkdocs_material-6.1.5-py2.py3-none-any.whl", hash = "sha256:53b2d544e60b2acc2f65c5c55705e881985fd2cf6eccb75d57f0cfa57eafdfab"},
@@ -787,9 +740,6 @@ mkdocs-material = [
 mkdocs-material-extensions = [
     {file = "mkdocs-material-extensions-1.0.1.tar.gz", hash = "sha256:6947fb7f5e4291e3c61405bad3539d81e0b3cd62ae0d66ced018128af509c68f"},
     {file = "mkdocs_material_extensions-1.0.1-py3-none-any.whl", hash = "sha256:d90c807a88348aa6d1805657ec5c0b2d8d609c110e62b9dce4daf7fa981fa338"},
-]
-mkdocs-pandoc = [
-    {file = "mkdocs-pandoc-0.2.6.tar.gz", hash = "sha256:fad91d1101e09e4d6ab4ccfd6b82601b3211712dc7d72fdec79bc3d974f17dd3"},
 ]
 mkdocstrings = [
     {file = "mkdocstrings-0.13.6-py3-none-any.whl", hash = "sha256:79d2a16b8c86a467bdc84846dfb90552551d2d9fd35578df9f92de13fb3b4537"},

@@ -1,7 +1,6 @@
 from mo_dots import Data, DataObject, FlatList, from_data, to_data, literal_field
 from dotty_dict import Dotty, dotty
 import json
-from traversy import traverse
 from typing import Dict, List, Literal, Tuple, Union, Any, Callable, Set
 import copy
 
@@ -25,6 +24,7 @@ def flatten(var: object) -> Data:
 	:param var: Dict-like variable to flatten.
 	:return: A mo-dots dict-like Data object.
 	"""
+	from traversy import traverse
 	result = Data()
 	for v in traverse(var, output_formatter=to_data):
 		result[literal_field(v.path_str)] = v.value
@@ -181,10 +181,10 @@ def duplicate(data: object) -> object:
 	return copy.deepcopy(data)
 
 
-def add_sibling(data: object, node_path: List, new_key: str, new_data: Any, _i: int = 0):
+def add_sibling(data: Dict, node_path: List, new_key: str, new_data: Any, _i: int = 0):
 	"""
 	Traversal-safe method to add a siblings data node.
-	:param data: The data object you're traversing.
+	:param data: The iterable data object you're traversing.
 	:param node_path: List of path segments pointing to the node you're creating a
 			sibling of. Same as node_path of traverse()
 	:param new_key: The sibling key to create.

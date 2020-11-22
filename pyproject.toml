@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "datafunc"
-version = "0.0.4"
+version = "0.0.5"
 description = "Python functions for various dict, list, and other data structures."
 license = "MIT"
 readme = "README.md"

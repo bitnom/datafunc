@@ -4,8 +4,6 @@ import json
 from typing import Dict, List, Literal, Tuple, Union, Any, Callable, Set
 import copy
 
-Boolean = Literal[True, False]
-
 
 def do_nothing(var: Any) -> Any:
 	"""
@@ -31,11 +29,11 @@ def flatten(var: object) -> Data:
 	return result
 
 
-def iterable(var: Any) -> Boolean:
+def iterable(var: Any) -> bool:
 	"""
 	Determine whether or not the input variable is iterable.
 	:param var: Any
-	:return: Boolean
+	:return: bool
 	"""
 	try:
 		iter(var)
@@ -44,21 +42,39 @@ def iterable(var: Any) -> Boolean:
 		return False
 
 
-def listlike(var: Any) -> Boolean:
+def listlike(var: Any) -> bool:
 	"""
 	Determine if the input variable is list-like
 	(Not a str, not dict-like, but is iterable)
 	:param var: Any
-	:return: Boolean
+	:return: bool
 	"""
-	return not isinstance(var, str) and not dictlike(var) and iterable(var)
+	return not isinstance(var, str) and not dictlike(var) and iterable(var)  # TODO: Add more constraints.
 
 
-def mo_dotian(var: Any) -> Boolean:
+def datalike(var: Any) -> bool:
+	"""
+	Determine if the input variable is list-like, dict-like, or dot-like.
+	:param var: Any
+	:return: bool
+	"""
+	return dictlike(var) or dotlike(var) or listlike(var)
+
+
+def dotlike(var: Any) -> bool:
+	"""
+	Determine whether or not the input var is a dot-accessible data-type.
+	:param var: Any
+	:return: bool
+	"""
+	return isinstance(var, (Data, DataObject, Dotty))
+
+
+def mo_dotian(var: Any) -> bool:
 	"""
 	Determine whether or not the input var is a mo-dots type.
 	:param var: Any
-	:return: Boolean
+	:return: bool
 	"""
 	return isinstance(var, (Data, DataObject, FlatList))
 
@@ -68,19 +84,19 @@ def apply_if(func_to_apply: Callable, var: Any, condition: Callable, else_func: 
 	Apply func_to_apply() to var if condiction() else apply else_func()
 	:param func_to_apply: Callable to pass var to if condition(var) return true
 	:param var: Variable to test against condition and return through func_to_apply() or else_func()
-	:param condition: Callable to test var against. Should return a Boolean.
+	:param condition: Callable to test var against. Callable should return a bool.
 	:param else_func: Callable to return var through if condition(var) returns False.
 	:return: func_to_apply(var) if condition(var) returns True, otherwise else_func(var)
 	"""
 	return func_to_apply(var) if condition(var) else else_func(var)
 
 
-def dictlike(var: Any) -> Boolean:
+def dictlike(var: Any) -> bool:
 	"""
 	Determine whether or not var is dict-like (Can
 	contain dict-like items).
 	:param var: Any variable to check
-	:return: Boolean
+	:return: bool
 	"""
 	try:
 		var.items()
@@ -89,12 +105,12 @@ def dictlike(var: Any) -> Boolean:
 		return False
 
 
-def nestable(var: Any) -> Boolean:
+def nestable(var: Any) -> bool:
 	"""
 	Will return True if input var is either list-like or
 	dict-like.
 	:param var: Any input variable.
-	:return: Boolean
+	:return: bool
 	"""
 	return dictlike(var) or listlike(var)
 
@@ -128,13 +144,13 @@ def compare(d1: object, d2: object) -> Data:
 	return to_data({'add': added, 'rm': removed, 'mod': modified, 'eq': same})
 
 
-def function_of(func: Callable, func_names: Tuple) -> Boolean:
+def function_of(func: Callable, func_names: Tuple) -> bool:
 	"""
 	Determine whether or not a function's (func) name exists in tuple of strings
 	(func_names).
 	:param func: The callable function to test.
 	:param func_names: Tuple of function names as strings ("func1", "func2", "func3,)
-	:return: Boolean True (func is of func_names) or False (func is not of func_names)
+	:return: bool True (func is of func_names) or False (func is not of func_names)
 	"""
 	return hasattr(func, '__call__') and func.__name__ in func_names
 
